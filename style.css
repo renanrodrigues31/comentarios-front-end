@@ -24,6 +24,8 @@ input[type="number"] {
 }
 
 
+
+
 body {
     background-color: var(--roxo-background);
     display: flex;
@@ -59,7 +61,7 @@ section {
     grid-template-areas:
     "foto-perfil add-comentario send"
  ;
-grid-template-columns: 1fr auto 1fr;
+grid-template-columns: 42px auto 90px;
 }
 
 
@@ -168,6 +170,11 @@ grid-template-columns: 1fr auto 1fr;
     font-size: 16px;
     font-weight: 500;
     vertical-align: middle;
+    transition: 0.3s;
+}
+
+.reply:hover, .edit:hover, .delete:hover {
+    opacity: 50%;
 }
 
 .delete {
@@ -194,3 +201,61 @@ grid-template-columns: 1fr auto 1fr;
     line-height: 1.5;
     font-size: 16px;
 }
+
+.foto-perfil, .foto-perfil img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.foto-perfil {
+    grid-area: foto-perfil;
+}
+
+.input-comentario {
+    grid-area: add-comentario;
+}
+
+.button-send {
+    grid-area: send;
+}
+
+.escrever-comentario textarea {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    color: var(--texto-comentarios);
+    resize: none; /*remove the resize handle on the bottom right*/
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    min-height: 50px;
+    overflow: auto;
+    padding: 15px 20px;
+}
+
+.escrever-comentario textarea:focus {
+    outline: 1px solid var(--roxo-principal);
+}
+
+.escrever-comentario textarea::placeholder {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+}
+
+.escrever-comentario button {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: var(--roxo-principal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 90px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.escrever-comentario button:hover {
+    background-color: var(--roxo-hover);
+}
+
