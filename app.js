@@ -8,10 +8,28 @@ const likeSubtrair = document.querySelectorAll('.icon-minus');
 send.addEventListener('click', criarComentario);
 
 function criarComentario() {
+    let elementoPai = document.querySelector('section');
     let criando = document.createElement('div');
-    criando.classList.add('coments');
-     let elementoPai = document.querySelector('section');
-        elementoPai.appendChild(criando);
+        criando.classList.add('coments');
+            criando.innerHTML = `<div class="likes">
+            <img class="icon-plus" src="./images/icon-plus.svg"><p>0</p><img class="icon-minus" src="./images/icon-minus.svg">
+          </div>
+          <div class="container-comentarios">
+            <div class="container-superior">
+                <div class="container-perfil">
+                  <div class="foto"><img src="./images/avatars/image-juliusomo.png"></div>
+                  <div class="nickname">amyrobson<span class="tag-you">you</span></div>
+                  <div class="date-publish">3 months ago</div>
+                </div>
+                <div class="container-reply-delete">
+                  <button class="reply"><img src="./images/icon-reply.svg">Reply</button>
+                  <button class="edit esconder"><img src="./images/icon-edit.svg">Edit</button>
+                  <button class="delete esconder"><img src="./images/icon-delete.svg">Delete</button>
+                </div>
+            </div>
+          <div class="comentario">Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.</div>
+        </div>`;
+         elementoPai.appendChild(criando);
 }
 
 for (var i = 0; i < reply.length; ++i) {
