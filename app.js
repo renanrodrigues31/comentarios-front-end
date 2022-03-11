@@ -4,29 +4,19 @@ const buttonDelete = document.querySelector('.delete');
 const edit = document.querySelectorAll('.edit');
 const likeAdicionar = document.querySelectorAll('.icon-plus');
 const likeSubtrair = document.querySelectorAll('.icon-minus');
-const idDivAleatorio = Math.floor(Math.random() * 100 + 1);
-
-
+let idDivAleatorio = Math.floor(Math.random() * 100000 + 1);
 
 /*for (var i = 0; i < buttonDelete.length; ++i) {
     buttonDelete[i].addEventListener */
 
   
-
-function excluirComentario() {
-    let pegarIdDiv = document.getElementById(idDivAleatorio);
-    if(pegarIdDiv) {
-        pegarIdDiv.classList.add('esconder');
-    }
-}
-
-
 send.addEventListener('click', criarComentario);
 
 function criarComentario() {
     let elementoPai = document.querySelector('section');
     const inputComent = document.querySelector('.escrever-comentario textarea').value;
     if (inputComent != '') {
+        let idDivAleatorio = Math.floor(Math.random() * 100000 + 1);
         let criando = document.createElement('div');
             criando.id = idDivAleatorio;
             criando.classList.add('coments');
@@ -51,9 +41,17 @@ function criarComentario() {
             elementoPai.appendChild(criando);
             let inputVazio = document.querySelector('.escrever-comentario textarea');
             inputVazio.value = '';
+            
     }
 }
 
+// isso aqui precisa ser corrigido (para remover a div) como eu pego o id gerado automaticamente?
+function excluirComentario() {
+    let pegarIdDiv = document.getElementById(idDivAleatorio);
+    if(pegarIdDiv) {
+        pegarIdDiv.remove();
+    }
+}
 
 
 
